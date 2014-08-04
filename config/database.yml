@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 20
+  timeout: 5000
+  username: jesper
+  password:
+
+development:
+  <<: *default
+  database: deploylist_development
+
+test:
+  <<: *default
+  database: deploylist_test

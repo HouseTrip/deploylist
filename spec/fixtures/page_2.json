@@ -1,0 +1,25 @@
+{
+    "results": [
+        {
+            "id": 500951,
+            "project_id": 36361,
+            "environment": "staging5",
+            "revision": "b687937da6ad6948d0f5b4e086465ecd51319b1f",
+            "repository": "git@github.com:HouseTrip/HouseTrip-Web-App.git",
+            "local_username": "dcruz",
+            "created_at": "2014-08-04T13:37:28Z"
+        },
+        {
+            "id": 500899,
+            "project_id": 36361,
+            "environment": "production",
+            "revision": "5aa37e453df69be2b8fcfb7339a73dd676ef07a2",
+            "repository": "git@github.com:HouseTrip/HouseTrip-Web-App.git",
+            "local_username": "khietle",
+            "created_at": "2014-08-04T12:56:36Z"
+        }
+    ],
+    "total_count": 5,
+    "current_page": 2,
+    "num_pages": 2
+}

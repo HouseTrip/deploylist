@@ -1,14 +1,20 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
+gem 'pg'
+gem 'unicorn-rails'
+
+gem 'faraday'
+gem 'faraday_middleware'
+
+gem 'pry-rails'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'unicorn-rails'
-
 group :test do
   gem 'rspec-rails'
+  gem 'webmock'
 end
 
 group :development do
