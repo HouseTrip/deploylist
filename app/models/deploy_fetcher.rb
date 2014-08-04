@@ -15,7 +15,7 @@ class DeployFetcher
   private
 
   def fetch_next_page
-    response = client.get("v1/projects/36361/deploys?page=#{@page}&auth_token=9C9sj9EF89xVeVojvHpa")
+    response = client.get("v1/projects/36361/deploys?page=#{@page}&auth_token=#{ENV['HONEYBADGER_TOKEN']}")
     @page += 1
     @num_pages ||= response.body["num_pages"]
 

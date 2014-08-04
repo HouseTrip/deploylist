@@ -27,3 +27,7 @@ group :development do
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
 end
+
+group :development, :test do
+  gem 'dotenv-rails'
+end
