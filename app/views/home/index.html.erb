@@ -1,2 +1,7 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Deploylist</h1>
+
+<% @deploys.each_with_index do |deploy, index| %>
+  <h2><%= deploy.time %></h2>
+  by <b><%= deploy.username %></b>, commit: <%= deploy.short_ref %>
+  <a href="<%= github_diff_link(deploy, @deploys[index+1]) %>">Changeset</a>
+<% end %>

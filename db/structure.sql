@@ -36,11 +36,12 @@ SET default_with_oids = false;
 CREATE TABLE deploys (
     id integer NOT NULL,
     uid character varying(255),
-    "time" character varying(255),
     revision character varying(255),
     repository character varying(255),
     username character varying(255),
     project_uid character varying(255),
+    environment character varying(255),
+    "time" timestamp without time zone,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
