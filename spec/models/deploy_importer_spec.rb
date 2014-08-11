@@ -36,5 +36,9 @@ describe DeployImporter do
     it 'stores the project uid' do
       expect(deploy.project_uid).to eq('3')
     end
+
+    it 'stores the environment' do
+      expect(deploy.environment).to eq('staging6')
+    end
   end
 end

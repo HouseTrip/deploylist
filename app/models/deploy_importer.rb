@@ -7,6 +7,8 @@ class DeployImporter
         d.repository = deploy['repository']
         d.username = deploy['local_username']
         d.project_uid = deploy['project_id']
+        d.environment = deploy['environment']
+
         d.save!
       end
     end
