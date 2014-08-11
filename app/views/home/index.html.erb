@@ -1,7 +1,9 @@
 <h1>Deploylist</h1>
 
 <% @deploys.each_with_index do |deploy, index| %>
-  <h2><%= deploy.time %></h2>
-  by <b><%= deploy.username %></b>, commit: <%= deploy.short_ref %>
-  <a href="<%= github_diff_link(deploy, @deploys[index+1]) %>">Changeset</a>
+  <h2><%= deploy.time.to_s(:short) %></h2>
+  by <b><%= deploy.username %></b>,
+  <a href="<%= github_diff_link(deploy, @deploys[index+1]) %>" title='Click to see the diff'>
+    <%= deploy.short_ref %>
+  </a>
 <% end %>
