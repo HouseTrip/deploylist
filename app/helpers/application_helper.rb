@@ -9,4 +9,8 @@ module ApplicationHelper
       "#"
     end
   end
+
+  def github_username(username)
+    GITHUB_USERNAME_MAPPING.fetch(username.to_sym, 'nyancat')
+  end
 end
