@@ -2,16 +2,16 @@ require 'rails_helper'
 
 describe DeployImporter do
   describe '.import' do
+    let(:deploy) { Deploy.last }
     let(:deploy_details) do
       [{ 'id' => 5,
         'project_id' => 3,
-        'environment' => 'staging6',
+        'environment' => 'production',
         'revision' => '072a7f8',
         'repository' => 'git@github.com:HouseTrip/HouseTrip-Web-App.git',
         'local_username' => 'jesper',
         'created_at' => '2014-08-04T17:47:57Z' }]
     end
-    let(:deploy) { Deploy.last }
 
     subject { described_class }
 
@@ -38,7 +38,7 @@ describe DeployImporter do
     end
 
     it 'stores the environment' do
-      expect(deploy.environment).to eq('staging6')
+      expect(deploy.environment).to eq('production')
     end
   end
 end

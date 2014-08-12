@@ -10,7 +10,7 @@ class CommitFetcher
     end
   end
 
-  # private
+  private
 
   attr_reader :deploy, :previous_deploy
 

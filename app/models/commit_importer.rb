@@ -7,7 +7,7 @@ class CommitImporter
     deploy.commits.find_or_initialize_by(sha: commit.sha).tap do |c|
       c.message = commit.commit.message
       c.date = commit.commit.author.date
-      c.author = commit.committer.login
+      c.author = commit.committer.login if commit.committer
 
       c.save!
     end

@@ -17,7 +17,7 @@ describe DeployFetcher do
     end
 
     it 'fetches and stores deploys from honeybadger' do
-      expect { subject.run }.to change{ Deploy.count }.by(5)
+      expect { subject.run }.to change{ Deploy.count }.by(4)
     end
   end
 end

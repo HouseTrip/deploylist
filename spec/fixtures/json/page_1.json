@@ -3,7 +3,7 @@
         {
             "id": 501433,
             "project_id": 36361,
-            "environment": "staging5",
+            "environment": "production",
             "revision": "072a7f85bd1747faa9dd018be5330fdaeebaa644",
             "repository": "git@github.com:HouseTrip/HouseTrip-Web-App.git",
             "local_username": "abeersalameh",
@@ -12,7 +12,7 @@
         {
             "id": 501386,
             "project_id": 36361,
-            "environment": "staging8",
+            "environment": "production",
             "revision": "8ad0b867c42153e5a96c7a88b358f2deedf1a3fe",
             "repository": "git@github.com:HouseTrip/HouseTrip-Web-App.git",
             "local_username": "tadej",

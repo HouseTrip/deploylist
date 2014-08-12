@@ -1,11 +1,16 @@
 <% @deploys.each_with_index do |deploy, index| %>
   <div class='row'>
     <div class='col-xs-12'>
-      <h2><%= deploy.time.to_s(:short) %></h2>
+      <h2><%= deploy.time.to_s(:long) %></h2>
       by <b><%= deploy.username %></b>,
       <a href="<%= github_diff_link(deploy, @deploys[index+1]) %>" title='Click to see the diff'>
         <%= deploy.short_ref %>
       </a>
+      <ul>
+        <% deploy.commits.each do |commit| %>
+          <li><%= commit.message %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
   <hr>
