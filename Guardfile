@@ -2,10 +2,10 @@ guard :bundler do
   watch('Gemfile')
 end
 
-guard 'rails' do
-  watch('Gemfile.lock')
-  watch(%r{^(config|lib)/.*})
-end
+# guard 'rails' do
+#   watch('Gemfile.lock')
+#   watch(%r{^(config|lib)/.*})
+# end
 
 guard :rspec, cmd: 'bundle exec rspec', all_on_start: true, run_all_after_pass: true do
   watch(%r{^spec/.+_spec\.rb$})

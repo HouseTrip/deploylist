@@ -5,7 +5,7 @@ describe DeployFetcher do
 
   def stub_page(page)
     stub_request(:get, "#{uri}&page=#{page}")
-      .to_return(status: 200, body: load_fixture("page_#{page}.json"))
+      .to_return(status: 200, body: load_fixture("json/page_#{page}.json"))
   end
 
   subject { described_class.new }

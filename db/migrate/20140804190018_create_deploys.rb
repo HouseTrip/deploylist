@@ -2,7 +2,7 @@ class CreateDeploys < ActiveRecord::Migration
   def change
     create_table :deploys do |t|
       t.string :uid
-      t.string :revision
+      t.string :sha
       t.string :repository
       t.string :username
       t.string :project_uid

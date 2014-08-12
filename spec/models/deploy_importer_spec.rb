@@ -21,8 +21,8 @@ describe DeployImporter do
       expect(deploy.uid).to eq('5')
     end
 
-    it 'stores the revision' do
-      expect(deploy.revision).to eq('072a7f8')
+    it 'stores the sha' do
+      expect(deploy.sha).to eq('072a7f8')
     end
 
     it 'stores the repository' do

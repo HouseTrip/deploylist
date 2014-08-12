@@ -15,9 +15,13 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'octokit', '~> 3.0'
+
 group :test do
   gem 'rspec-rails'
   gem 'webmock'
+  gem 'vcr'
+  gem 'factory_girl_rails'
 end
 
 group :development do

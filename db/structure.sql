@@ -30,6 +30,41 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: commits; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE commits (
+    id integer NOT NULL,
+    message text,
+    sha character varying(255),
+    author character varying(255),
+    date timestamp without time zone,
+    deploy_id integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: commits_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE commits_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: commits_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE commits_id_seq OWNED BY commits.id;
+
+
+--
 -- Name: deploys; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -79,7 +114,22 @@ CREATE TABLE schema_migrations (
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY commits ALTER COLUMN id SET DEFAULT nextval('commits_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY deploys ALTER COLUMN id SET DEFAULT nextval('deploys_id_seq'::regclass);
+
+
+--
+-- Name: commits_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY commits
+    ADD CONSTRAINT commits_pkey PRIMARY KEY (id);
 
 
 --
@@ -104,4 +154,6 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 SET search_path TO "$user",public;
 
 INSERT INTO schema_migrations (version) VALUES ('20140804190018');
+
+INSERT INTO schema_migrations (version) VALUES ('20140812134211');
 
