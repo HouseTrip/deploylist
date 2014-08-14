@@ -1,8 +1,9 @@
 <% @deploys.each_with_index do |deploy, index| %>
+  <% deploy = DeployPresenter.new(deploy) %>
   <div class='row'>
     <div class='col-xs-12'>
       <h2><%= deploy.time.to_s(:long) %></h2>
-      by <b><%= deploy.username %></b>,
+      by <%= link_to deploy.name, deploy.user_link %></b>,
       <a href="<%= github_diff_link(deploy, @deploys[index+1]) %>" title='Click to see the diff'>
         <%= deploy.short_ref %>
       </a>

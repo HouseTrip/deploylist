@@ -4,7 +4,7 @@ class Deploy < ActiveRecord::Base
   validates :uid, :sha, :username, :environment, :time, presence: true
   validates_uniqueness_of :uid
 
-  scope :production, -> { where(environment: 'production') }
+  scope :production, -> { where(environment: 'production').order('time DESC') }
 
   def short_ref
     sha ? sha[0, 7] : ""
