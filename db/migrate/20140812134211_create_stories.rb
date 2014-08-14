@@ -1,9 +1,8 @@
-class CreateCommits < ActiveRecord::Migration
+class CreateStories < ActiveRecord::Migration
   def change
-    create_table :commits do |t|
+    create_table :stories do |t|
       t.text :message
-      t.string :sha
-      t.string :author
+      t.string :uid
       t.datetime :date
       t.references :deploy
 

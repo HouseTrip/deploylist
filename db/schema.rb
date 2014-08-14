@@ -16,16 +16,6 @@ ActiveRecord::Schema.define(version: 20140812134211) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "commits", force: true do |t|
-    t.text     "message"
-    t.string   "sha"
-    t.string   "author"
-    t.datetime "date"
-    t.integer  "deploy_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "deploys", force: true do |t|
     t.string   "uid"
     t.string   "sha"
@@ -34,6 +24,17 @@ ActiveRecord::Schema.define(version: 20140812134211) do
     t.string   "project_uid"
     t.string   "environment"
     t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stories", force: true do |t|
+    t.text     "message"
+    t.string   "uid"
+    t.string   "sha"
+    t.string   "author"
+    t.datetime "date"
+    t.integer  "deploy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,8 +1,8 @@
 class Deploy < ActiveRecord::Base
-  has_many :commits, dependent: :destroy
+  has_many :stories, dependent: :destroy
 
   validates :uid, :sha, :username, :environment, :time, presence: true
-  validates :uid, unique: true
+  validates_uniqueness_of :uid
 
   scope :production, -> { where(environment: 'production') }
 

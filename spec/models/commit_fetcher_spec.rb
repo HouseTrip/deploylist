@@ -13,12 +13,12 @@ describe CommitFetcher do
   subject { described_class.new(deploy, previous_deploy) }
 
   describe '#run' do
-    it 'fetches and stores commits between two commits' do
+    it 'fetches and stores stories between two stories' do
       expect {
         VCR.use_cassette('compare_deploys') do
           subject.run
         end
-      }.to change{ deploy.reload.commits.count }.by(32)
+      }.to change{ deploy.reload.stories.count }.by(32)
     end
   end
 end

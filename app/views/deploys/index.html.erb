@@ -7,8 +7,8 @@
         <%= deploy.short_ref %>
       </a>
       <ul>
-        <% deploy.commits.each do |commit| %>
-          <li><%= commit.message %></li>
+        <% deploy.stories.each do |story| %>
+          <li><%= story.message %></li>
         <% end %>
       </ul>
     </div>

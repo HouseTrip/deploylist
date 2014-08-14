@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class DeploysController < ApplicationController
   def index
     @deploys = Deploy.production
   end

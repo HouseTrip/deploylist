@@ -5,8 +5,6 @@ class FullImport
     @deploys.each_with_index do |deploy, index|
       previous_deploy = @deploys[index+1]
 
-      next if deploy.commits.any?
-
       next if deploy == previous_deploy
 
       next unless deploy.sha && previous_deploy.sha
