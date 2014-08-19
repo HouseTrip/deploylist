@@ -6,7 +6,7 @@ class CommitFetcher
 
   def run
     comparrison.commits.each do |commit|
-      CommitImporter.new(deploy).import(commit)
+      StoryImporter.new(deploy, commit).import
     end
   end
 

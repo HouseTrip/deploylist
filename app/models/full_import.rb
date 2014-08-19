@@ -1,5 +1,7 @@
 class FullImport
   def self.run
+    DeployFetcher.new.run
+
     @deploys = Deploy.all.order('time DESC')
 
     @deploys.each_with_index do |deploy, index|
@@ -7,7 +9,7 @@ class FullImport
 
       next if deploy == previous_deploy
 
-      next unless deploy.sha && previous_deploy.sha
+      next unless (deploy && deploy.sha) && (previous_deploy && previous_deploy.sha)
 
       CommitFetcher.new(deploy, previous_deploy).run
     end
