@@ -10,14 +10,14 @@ describe DeployFetcher do
 
   subject { described_class.new }
 
-  describe '#run' do
+  describe '#call' do
     before do
       stub_page(1)
       stub_page(2)
     end
 
     it 'fetches and stores deploys from honeybadger' do
-      expect { subject.run }.to change{ Deploy.count }.by(4)
+      expect { subject.call }.to change{ Deploy.count }.by(4)
     end
   end
 end

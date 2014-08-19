@@ -5,7 +5,7 @@ class CommitFetcher
     @deploy, @previous_deploy = deploy, previous_deploy
   end
 
-  def run
+  def call
     comparrison.commits.each do |commit|
       StoryImporter.new(deploy, commit).import
     end

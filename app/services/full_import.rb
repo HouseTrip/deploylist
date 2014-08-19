@@ -1,6 +1,6 @@
 class FullImport
-  def self.run
-    DeployFetcher.new.run
+  def self.call
+    DeployFetcher.new.call
 
     @deploys = Deploy.production
 
@@ -11,7 +11,7 @@ class FullImport
 
       next unless (deploy && deploy.sha) && (previous_deploy && previous_deploy.sha)
 
-      CommitFetcher.new(deploy, previous_deploy).run
+      CommitFetcher.new(deploy, previous_deploy).call
     end
 
     Story.without_title.with_pull_requests.each do |story|

@@ -6,7 +6,7 @@ class DeployFetcher
     @page, @num_pages = 1, nil
   end
 
-  def run
+  def call
     begin
       DeployImporter.import(fetch_next_page)
     end while @page <= @num_pages

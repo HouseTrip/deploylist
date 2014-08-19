@@ -1,5 +1,5 @@
 namespace :deploylist do
   task fetch: :environment do
-    DeployFetcher.new.run
+    FullImport.call
   end
 end
