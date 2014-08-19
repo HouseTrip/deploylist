@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812134211) do
+ActiveRecord::Schema.define(version: 20140819160145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,14 @@ ActiveRecord::Schema.define(version: 20140812134211) do
 
   create_table "stories", force: true do |t|
     t.text     "message"
-    t.string   "uid"
+    t.string   "pivotal_uid"
     t.string   "sha"
     t.string   "author"
     t.datetime "date"
     t.integer  "deploy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pull_request_uid"
   end
 
 end

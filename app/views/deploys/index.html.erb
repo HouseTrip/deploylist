@@ -9,7 +9,10 @@
       </a>
       <ul>
         <% deploy.stories.each do |story| %>
-          <li>Pivotal story: #<%= story.uid %></li>
+          <li>
+            <%= pivotal_link(story) %>
+            <%= pull_request_link(story) %>
+          </li>
         <% end %>
       </ul>
     </div>

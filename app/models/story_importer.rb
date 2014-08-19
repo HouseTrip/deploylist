@@ -4,9 +4,10 @@ class StoryImporter
   end
 
   def import
-    return unless pivotal_uid.present?
+    return unless pivotal_uid.present? || pull_request_uid.present?
 
-    deploy.stories.find_or_initialize_by(uid: pivotal_uid).tap do |c|
+    deploy.stories.find_or_initialize_by(pull_request_uid: pull_request_uid).tap do |c|
+      c.pivotal_uid = pivotal_uid
       c.message = message
       c.date = commit.commit.author.date
       c.author = commit.committer.login if commit.committer
@@ -18,7 +19,11 @@ class StoryImporter
   private
 
   def pivotal_uid
-    @pivotal_uid ||= PivotalUidExtractor.new(message).uid
+    UidExtractor.new(message).pt_uid
+  end
+
+  def pull_request_uid
+    UidExtractor.new(message).pr_uid
   end
 
   def message
