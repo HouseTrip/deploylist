@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/6558
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 3.3.0
+      Authorization:
+      - token accdc407aeef47781cdea71463f06b06db6fe432
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 19 Aug 2014 19:23:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4933'
+      X-Ratelimit-Reset:
+      - '1408476853'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Tue, 19 Aug 2014 19:03:30 GMT
+      Etag:
+      - '"febb5920fa649b8e230e9d0fd5264f38"'
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 45A4D740:7B5A:3C38AB1:53F3A449
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - c046d59f93ede9ab52d5ac29f1ed70f7
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/6558","id":19973468,"html_url":"https://github.com/HouseTrip/HouseTrip-Web-App/pull/6558","diff_url":"https://github.com/HouseTrip/HouseTrip-Web-App/pull/6558.diff","patch_url":"https://github.com/HouseTrip/HouseTrip-Web-App/pull/6558.patch","issue_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/6558","number":6558,"state":"open","locked":false,"title":"Bookings:
+        Purple booking bar and new tabs A/B test [#76291634]","user":{"login":"mrship","id":14839,"avatar_url":"https://avatars.githubusercontent.com/u/14839?v=2","gravatar_id":"b026b250773e2e4b35001bef3ac94ddc","url":"https://api.github.com/users/mrship","html_url":"https://github.com/mrship","followers_url":"https://api.github.com/users/mrship/followers","following_url":"https://api.github.com/users/mrship/following{/other_user}","gists_url":"https://api.github.com/users/mrship/gists{/gist_id}","starred_url":"https://api.github.com/users/mrship/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/mrship/subscriptions","organizations_url":"https://api.github.com/users/mrship/orgs","repos_url":"https://api.github.com/users/mrship/repos","events_url":"https://api.github.com/users/mrship/events{/privacy}","received_events_url":"https://api.github.com/users/mrship/received_events","type":"User","site_admin":false},"body":":lipstick:
+        Turn the booking bar indigo when sticky\r\n:nail_care: New \"tabbed-style\"
+        navigation for the full page PPP. The idea being we have similar navigation
+        but a full page PPP instead of actual tabs.\r\n:open_mouth: CSS for indigo
+        is for test purposes only; it _will_ get refactored!\r\n:memo: Sticky bar
+        doesn''t show indigo in Safari; will fix if the test wins\r\n:memo: Had to
+        add another loader gif because the transparent one looked poor on an indigo
+        background.\r\n\r\n---\r\n\r\n![purple](https://cloud.githubusercontent.com/assets/14839/3964997/b14061dc-2790-11e4-8e26-16d5df783150.png)\r\n\r\n---\r\n\r\nPivotal
+        tracker story [#76291634](https://www.pivotaltracker.com/story/show/76291634)
+        in project *Bookings*:\r\n\r\n> As a Product Manager I would like to test
+        having the purple bar on the full-page PPP so that I can see if that attracts
+        more users to check availability and find\r\n> \r\n> **Notes:**\r\n> \r\n>
+        - This is desktop only\r\n> \r\n> - The tabbed version should look exactly
+        as it does today, with the white booking bar\r\n> \r\n> - The full-page version
+        should have the purple booking bar and the new tabs\r\n> \r\n> - See attached
+        for the mock-up of the anchor links navigation which go with the purple booking
+        bar (they look the same as the tabs on the tabbed version basically!)\r\n>
+        \r\n> - The version of the purple booking bar that is currently on the full-page
+        PPP A/B test looks good. I think Alessandro just \"shoved up\" Seb''s code
+        onto Staging in a temporary way to get this working on Staging so it will
+        need reworking. The change to purple on Staging was in this story - https://www.pivotaltracker.com/story/show/75898544\r\n>
+        \r\n> - Please can we use these for the feature flag, A/B test and Kissmetrics
+        info?\r\n> \r\n> --> Feature flag = \"Full page PPP\" (new, we didn''t have
+        a feature flag for the first version and we should have this time)\r\n> -->
+        Kissmetrics property \"Full page PPP\" = \"Yes\" or \"No\" (same as first
+        version)\r\n> --> Abingo \"Full page ppp\" and \"Tabbed ppp\" (same as first
+        version)\r\n> \r\n> - For the A/B test, mobile and IE8 users should not be
+        participants in the test either for ABingo or Kissmetrics\r\n> \r\n> **Test
+        plan:**\r\n> \r\n> 1. Test purple booking bar and new tabs A/B test (scrolling,
+        anchor links aren''t covered by booking bar, red bar for unavailability, green
+        bar for available, make enquiry, make booking)\r\n> \r\n> 2. Test standard
+        booking bar and same tabs A/B test (scrolling, tabs aren''t covered by booking
+        bar, red bar for unavailability, green bar for available, make enquiry, make
+        booking)\r\n> \r\n> 3. Test on mobile (that these changes don''t appear)\r\n>
+        \r\n> 4. Test on other browsers\r\n> \r\n> 5. Test translations (no new translations)","created_at":"2014-08-19T11:07:22Z","updated_at":"2014-08-19T11:14:04Z","closed_at":null,"merged_at":null,"merge_commit_sha":"c5b894db35c70c70c4f22df62e875def7ab4d772","assignee":null,"milestone":null,"commits_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/6558/commits","review_comments_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/6558/comments","review_comment_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/comments/{number}","comments_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/6558/comments","statuses_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/statuses/b5d821c03a571267df3868d11dba1ef68e00a8cb","head":{"label":"HouseTrip:bookings/purple-booking-bar-new-tabs-76291634","ref":"bookings/purple-booking-bar-new-tabs-76291634","sha":"b5d821c03a571267df3868d11dba1ef68e00a8cb","user":{"login":"HouseTrip","id":142723,"avatar_url":"https://avatars.githubusercontent.com/u/142723?v=2","gravatar_id":"d8db298b62716cc389471867da61ddb6","url":"https://api.github.com/users/HouseTrip","html_url":"https://github.com/HouseTrip","followers_url":"https://api.github.com/users/HouseTrip/followers","following_url":"https://api.github.com/users/HouseTrip/following{/other_user}","gists_url":"https://api.github.com/users/HouseTrip/gists{/gist_id}","starred_url":"https://api.github.com/users/HouseTrip/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/HouseTrip/subscriptions","organizations_url":"https://api.github.com/users/HouseTrip/orgs","repos_url":"https://api.github.com/users/HouseTrip/repos","events_url":"https://api.github.com/users/HouseTrip/events{/privacy}","received_events_url":"https://api.github.com/users/HouseTrip/received_events","type":"Organization","site_admin":false},"repo":{"id":344965,"name":"HouseTrip-Web-App","full_name":"HouseTrip/HouseTrip-Web-App","owner":{"login":"HouseTrip","id":142723,"avatar_url":"https://avatars.githubusercontent.com/u/142723?v=2","gravatar_id":"d8db298b62716cc389471867da61ddb6","url":"https://api.github.com/users/HouseTrip","html_url":"https://github.com/HouseTrip","followers_url":"https://api.github.com/users/HouseTrip/followers","following_url":"https://api.github.com/users/HouseTrip/following{/other_user}","gists_url":"https://api.github.com/users/HouseTrip/gists{/gist_id}","starred_url":"https://api.github.com/users/HouseTrip/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/HouseTrip/subscriptions","organizations_url":"https://api.github.com/users/HouseTrip/orgs","repos_url":"https://api.github.com/users/HouseTrip/repos","events_url":"https://api.github.com/users/HouseTrip/events{/privacy}","received_events_url":"https://api.github.com/users/HouseTrip/received_events","type":"Organization","site_admin":false},"private":true,"html_url":"https://github.com/HouseTrip/HouseTrip-Web-App","description":"Your
+        marketplace for holiday rentals","fork":false,"url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App","forks_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/forks","keys_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/keys{/key_id}","collaborators_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/teams","hooks_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/hooks","issue_events_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/events{/number}","events_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/events","assignees_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/assignees{/user}","branches_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/branches{/branch}","tags_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/tags","blobs_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/refs{/sha}","trees_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/trees{/sha}","statuses_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/statuses/{sha}","languages_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/languages","stargazers_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/stargazers","contributors_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/contributors","subscribers_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/subscribers","subscription_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/subscription","commits_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/commits{/sha}","git_commits_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/commits{/sha}","comments_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/comments{/number}","issue_comment_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/comments/{number}","contents_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/contents/{+path}","compare_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/compare/{base}...{head}","merges_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/merges","archive_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/downloads","issues_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues{/number}","pulls_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls{/number}","milestones_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/milestones{/number}","notifications_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/labels{/name}","releases_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/releases{/id}","created_at":"2009-10-21T16:09:50Z","updated_at":"2014-08-19T07:33:36Z","pushed_at":"2014-08-19T18:57:48Z","git_url":"git://github.com/HouseTrip/HouseTrip-Web-App.git","ssh_url":"git@github.com:HouseTrip/HouseTrip-Web-App.git","clone_url":"https://github.com/HouseTrip/HouseTrip-Web-App.git","svn_url":"https://github.com/HouseTrip/HouseTrip-Web-App","homepage":"www.housetrip.com","size":664779,"stargazers_count":6,"watchers_count":6,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":40,"forks":0,"open_issues":40,"watchers":6,"default_branch":"master"}},"base":{"label":"HouseTrip:master","ref":"master","sha":"fd07ec935ec02c4bac8e451dec73417dbafea4dc","user":{"login":"HouseTrip","id":142723,"avatar_url":"https://avatars.githubusercontent.com/u/142723?v=2","gravatar_id":"d8db298b62716cc389471867da61ddb6","url":"https://api.github.com/users/HouseTrip","html_url":"https://github.com/HouseTrip","followers_url":"https://api.github.com/users/HouseTrip/followers","following_url":"https://api.github.com/users/HouseTrip/following{/other_user}","gists_url":"https://api.github.com/users/HouseTrip/gists{/gist_id}","starred_url":"https://api.github.com/users/HouseTrip/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/HouseTrip/subscriptions","organizations_url":"https://api.github.com/users/HouseTrip/orgs","repos_url":"https://api.github.com/users/HouseTrip/repos","events_url":"https://api.github.com/users/HouseTrip/events{/privacy}","received_events_url":"https://api.github.com/users/HouseTrip/received_events","type":"Organization","site_admin":false},"repo":{"id":344965,"name":"HouseTrip-Web-App","full_name":"HouseTrip/HouseTrip-Web-App","owner":{"login":"HouseTrip","id":142723,"avatar_url":"https://avatars.githubusercontent.com/u/142723?v=2","gravatar_id":"d8db298b62716cc389471867da61ddb6","url":"https://api.github.com/users/HouseTrip","html_url":"https://github.com/HouseTrip","followers_url":"https://api.github.com/users/HouseTrip/followers","following_url":"https://api.github.com/users/HouseTrip/following{/other_user}","gists_url":"https://api.github.com/users/HouseTrip/gists{/gist_id}","starred_url":"https://api.github.com/users/HouseTrip/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/HouseTrip/subscriptions","organizations_url":"https://api.github.com/users/HouseTrip/orgs","repos_url":"https://api.github.com/users/HouseTrip/repos","events_url":"https://api.github.com/users/HouseTrip/events{/privacy}","received_events_url":"https://api.github.com/users/HouseTrip/received_events","type":"Organization","site_admin":false},"private":true,"html_url":"https://github.com/HouseTrip/HouseTrip-Web-App","description":"Your
+        marketplace for holiday rentals","fork":false,"url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App","forks_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/forks","keys_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/keys{/key_id}","collaborators_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/teams","hooks_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/hooks","issue_events_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/events{/number}","events_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/events","assignees_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/assignees{/user}","branches_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/branches{/branch}","tags_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/tags","blobs_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/refs{/sha}","trees_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/trees{/sha}","statuses_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/statuses/{sha}","languages_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/languages","stargazers_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/stargazers","contributors_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/contributors","subscribers_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/subscribers","subscription_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/subscription","commits_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/commits{/sha}","git_commits_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/git/commits{/sha}","comments_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/comments{/number}","issue_comment_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/comments/{number}","contents_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/contents/{+path}","compare_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/compare/{base}...{head}","merges_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/merges","archive_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/downloads","issues_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues{/number}","pulls_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls{/number}","milestones_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/milestones{/number}","notifications_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/labels{/name}","releases_url":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/releases{/id}","created_at":"2009-10-21T16:09:50Z","updated_at":"2014-08-19T07:33:36Z","pushed_at":"2014-08-19T18:57:48Z","git_url":"git://github.com/HouseTrip/HouseTrip-Web-App.git","ssh_url":"git@github.com:HouseTrip/HouseTrip-Web-App.git","clone_url":"https://github.com/HouseTrip/HouseTrip-Web-App.git","svn_url":"https://github.com/HouseTrip/HouseTrip-Web-App","homepage":"www.housetrip.com","size":664779,"stargazers_count":6,"watchers_count":6,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":40,"forks":0,"open_issues":40,"watchers":6,"default_branch":"master"}},"_links":{"self":{"href":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/6558"},"html":{"href":"https://github.com/HouseTrip/HouseTrip-Web-App/pull/6558"},"issue":{"href":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/6558"},"comments":{"href":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/issues/6558/comments"},"review_comments":{"href":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/6558/comments"},"review_comment":{"href":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/comments/{number}"},"commits":{"href":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/pulls/6558/commits"},"statuses":{"href":"https://api.github.com/repos/HouseTrip/HouseTrip-Web-App/statuses/b5d821c03a571267df3868d11dba1ef68e00a8cb"}},"merged":false,"mergeable":true,"mergeable_state":"unstable","merged_by":null,"comments":1,"review_comments":0,"commits":10,"additions":124,"deletions":34,"changed_files":8}'
+    http_version: 
+  recorded_at: Tue, 19 Aug 2014 19:23:53 GMT
+recorded_with: VCR 2.9.2

@@ -89,7 +89,8 @@ CREATE TABLE stories (
     deploy_id integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    pull_request_uid character varying(255)
+    pull_request_uid character varying(255),
+    title character varying(255)
 );
 
 
@@ -160,4 +161,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140804190018');
 INSERT INTO schema_migrations (version) VALUES ('20140812134211');
 
 INSERT INTO schema_migrations (version) VALUES ('20140819160145');
+
+INSERT INTO schema_migrations (version) VALUES ('20140819192156');
 

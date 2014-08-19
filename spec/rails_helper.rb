@@ -9,6 +9,12 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 ActiveRecord::Migration.maintain_test_schema!
 
+require 'vcr'
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/cassettes'
+  c.hook_into :webmock
+end
+
 RSpec.configure do |config|
   config.include(FixtureHelper)
   config.include(FactoryGirl::Syntax::Methods)

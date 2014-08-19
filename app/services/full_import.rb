@@ -13,5 +13,9 @@ class FullImport
 
       CommitFetcher.new(deploy, previous_deploy).run
     end
+
+    Story.without_title.with_pull_requests.each do |story|
+      PullRequestFetcher.new(story).call
+    end
   end
 end

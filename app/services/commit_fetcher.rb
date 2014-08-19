@@ -16,10 +16,6 @@ class CommitFetcher
   attr_reader :deploy, :previous_deploy
 
   def comparrison
-    client.compare(
-      'HouseTrip/HouseTrip-Web-App',
-      previous_deploy.sha,
-      deploy.sha
-    )
+    client.compare(repo, previous_deploy.sha, deploy.sha)
   end
 end

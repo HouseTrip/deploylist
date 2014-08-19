@@ -9,9 +9,12 @@
       </a>
       <ul>
         <% deploy.stories.each do |story| %>
+          <% story = StoryPresenter.new(story) %>
           <li>
-            <%= pivotal_link(story) %>
+            <%= story.title.titleize %>
+            -
             <%= pull_request_link(story) %>
+            <%= pivotal_link(story) %> |
           </li>
         <% end %>
       </ul>
