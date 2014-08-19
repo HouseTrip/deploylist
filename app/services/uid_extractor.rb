@@ -3,11 +3,11 @@ class UidExtractor
     @input = input
   end
 
-  def pr_uid
+  def pull_request_uid
     input.scan(/Merge pull request #(\d+)/).flatten.first
   end
 
-  def pt_uid
+  def pivotal_uid
     input.scan(/-(\d+)$/).flatten.first
   end
 

@@ -1,4 +1,5 @@
 class CommitFetcher
+  include GithubClient
 
   def initialize(deploy, previous_deploy)
     @deploy, @previous_deploy = deploy, previous_deploy
@@ -20,9 +21,5 @@ class CommitFetcher
       previous_deploy.sha,
       deploy.sha
     )
-  end
-
-  def client
-    Octokit::Client.new(access_token: ENV.fetch('GITHUB_TOKEN'))
   end
 end

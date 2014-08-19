@@ -2,7 +2,7 @@ class FullImport
   def self.run
     DeployFetcher.new.run
 
-    @deploys = Deploy.all.order('time DESC')
+    @deploys = Deploy.production
 
     @deploys.each_with_index do |deploy, index|
       previous_deploy = @deploys[index+1]

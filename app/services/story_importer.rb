@@ -18,17 +18,17 @@ class StoryImporter
 
   private
 
+  attr_reader :deploy, :commit
+
   def pivotal_uid
-    UidExtractor.new(message).pt_uid
+    UidExtractor.new(message).pivotal_uid
   end
 
   def pull_request_uid
-    UidExtractor.new(message).pr_uid
+    UidExtractor.new(message).pull_request_uid
   end
 
   def message
     commit[:commit][:message]
   end
-
-  attr_reader :deploy, :commit
 end
