@@ -1,24 +1,31 @@
 <% @deploys.each_with_index do |deploy, index| %>
-  <% deploy = DeployPresenter.new(deploy) %>
   <div class='row'>
     <div class='col-xs-12'>
-      <h2><%= deploy.time.to_s(:long) %></h2>
-      by <%= link_to deploy.name, deploy.user_link %></b>,
-      <a href="<%= github_diff_link(deploy, @deploys[index+1]) %>" title='Click to see the diff'>
-        <%= deploy.short_ref %>
-      </a>
-      <ul>
-        <% deploy.stories.each do |story| %>
-          <% story = StoryPresenter.new(story) %>
-          <li>
-            <%= story.title.titleize %>
-            -
+      <h2>
+        <%= deploy.time.to_s(:long) %>
+        <small>
+          <%= deploy.short_ref %>
+          by <%= link_to deploy.name, deploy.user_link %>
+        </small>
+      </h2>
+
+      <% deploy.stories.each do |story| %>
+        <% story = StoryPresenter.new(story) %>
+        <h4>
+          <% if story.pull_request_uid %>
             <%= pull_request_link(story) %>
-            <%= pivotal_link(story) %> |
-          </li>
-        <% end %>
-      </ul>
+          <% else %>
+            <%= story.title.titleize %>
+          <% end %>
+          <small>
+            <%= pivotal_link(story) %>
+          </small>
+        </h4>
+      <% end %>
+
+      <h5><%= github_diff_link(deploy, @deploys[index+1]) %></h5>
+
+      <hr>
     </div>
   </div>
-  <hr>
 <% end %>
