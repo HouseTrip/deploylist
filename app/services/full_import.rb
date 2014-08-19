@@ -1,8 +1,8 @@
 class FullImport
-  def self.call
+  def self.call(limit = 100)
     DeployFetcher.new.call
 
-    @deploys = Deploy.production
+    @deploys = Deploy.production.limit(limit)
 
     @deploys.each_with_index do |deploy, index|
       previous_deploy = @deploys[index+1]

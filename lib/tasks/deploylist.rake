@@ -1,5 +1,5 @@
 namespace :deploylist do
   task fetch: :environment do
-    FullImport.call
+    FullImport.call(10)
   end
 end
