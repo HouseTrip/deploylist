@@ -10,7 +10,7 @@ class StoryImporter
       c.pivotal_uid = pivotal_uid
       c.message = message
       c.date = commit.commit.author.date
-      c.author = commit.committer.login if commit.committer
+      # c.author = commit.committer.login if commit.committer
 
       c.save!
     end
