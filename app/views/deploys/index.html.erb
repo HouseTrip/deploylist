@@ -5,6 +5,7 @@
         <%= deploy.time.to_s(:long) %>
         <small>
           <%= deploy.short_ref %>
+          <%= '(re-deploy)' if deploy.sha == @deploys[index+1].try(:sha) %>
           by <%= link_to deploy.name, deploy.user_link %>
         </small>
       </h2>
