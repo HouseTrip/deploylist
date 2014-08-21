@@ -1,6 +1,9 @@
 class DeployImporter
   def self.import(deploys)
     deploys.map do |deploy|
+      # time when the deploy script was fixed to send the right sha to honeybadger
+      next if deploy['created_at'] <= Time.new(2014, 8, 20, 12) && !Rails.env.test?
+
       next if deploy['environment'] != 'production'
 
       Deploy.find_or_initialize_by(uid: deploy['id'].to_s).tap do |d|
