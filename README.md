@@ -5,6 +5,7 @@
 * `cp config/database.example.yml config/database/yml`
 * `bundle install`
 * `rake db:setup`
+* `rake deploylist:fetch`
 * `foreman start`
 * Visit http://localhost:3000
 
