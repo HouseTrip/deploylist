@@ -9,9 +9,9 @@ module ApplicationHelper
   # https://www.pivotaltracker.com/story/show/76291634
   def pivotal_link(story)
     return unless story.pivotal_uid
-    link_to "story",
+    link_to "##{story.pivotal_uid}",
       "https://www.pivotaltracker.com/story/show/#{story.pivotal_uid}",
-      title: "##{story.pivotal_uid}"
+      title: "Pivotal story"
   end
 
   def pull_request_link(story)
