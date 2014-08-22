@@ -2,7 +2,8 @@
 
 * Install [postgresapp](http://postgresapp.com/)
 * Add the Postgres executable to your PATH, see [this](http://postgresapp.com/documentation/cli-tools.html)
-* `cp config/database.example.yml config/database/yml`
+* `createuser postgres -d` (creates the postgres user in Postgres with ability to create databases)
+* `cp config/database.example.yml config/database.yml`
 * `bundle install`
 * `rake db:setup`
 * `rake deploylist:fetch`
