@@ -3,7 +3,7 @@ default: &default
   encoding: utf8
   pool: 20
   timeout: 5000
-  username: jesper
+  username: postgres
   password:
 
 development:
