@@ -2,6 +2,7 @@
   <div class='row'>
     <div class='col-xs-12'>
       <h2>
+        <%= content_tag :a, "", name: deploy.short_ref %>
         <%= deploy.time.to_s(:long) %>
         <small>
           <%= deploy.short_ref %>
