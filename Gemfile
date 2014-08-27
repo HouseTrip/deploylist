@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3'
 
 gem 'octokit', '~> 3.0'
 
+gem 'newrelic_rpm', '~> 3.9.3.241'
+
 group :test do
   gem 'rspec-rails'
   gem 'webmock'
