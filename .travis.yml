@@ -1,11 +1,21 @@
 language: ruby
 rvm:
-  - 2.1.2
+- 2.1.2
 cache:
-  - bundler
+- bundler
 before_script:
-  - cp config/database.example.yml config/database.yml
-  - psql -c 'create database deploylist_test;' -U postgres
-  - bundle exec rake db:migrate
+- cp config/database.example.yml config/database.yml
+- psql -c 'create database deploylist_test;' -U postgres
+- bundle exec rake db:migrate
 script:
-  - bundle exec rspec
+- bundle exec rspec
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  api_key:
+    secure: yfXjPX6X6y/yDPy1ElZzRW0dbET659pdQs3PD+jguqDsM/SJ3TxbAjgmRynk084ncBUfCJVKe7+W1Ti/ZrPe3PHTDK5XTXz41CUu4cFwOFp35gtx5X9wM2aQgxB6GVN7rHLi8iSB8UF8QEWpzio2xhfBtv/YJPr/E5uy6/ICa6I=
+  app: deploylist
+  on:
+    repo: HouseTrip/deploylist
