@@ -4,6 +4,6 @@ class DeploysController < ApplicationController
   end
 
   def ping
-    render :text => 'pong'
+    render text: 'pong'
   end
 end
