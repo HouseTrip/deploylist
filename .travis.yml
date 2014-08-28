@@ -9,9 +9,6 @@ before_script:
 - bundle exec rake db:migrate
 script:
 - bundle exec rspec
-branches:
-  only:
-  - master
 sudo: false
 deploy:
   provider: heroku
