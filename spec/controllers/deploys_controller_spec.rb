@@ -7,4 +7,11 @@ describe DeploysController do
       expect(response.body).to eq('pong')
     end
   end
+
+  describe "fetch" do
+    it 'kicks off an import' do
+      expect(FullImport).to receive(:call).with(1)
+      get :fetch
+    end
+  end
 end
