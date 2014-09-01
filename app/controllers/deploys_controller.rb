@@ -10,9 +10,12 @@ class DeploysController < ApplicationController
   end
 
   def fetch
-    response.stream.write("Kicking off the import...")
-    response.stream.write("import complete. (took #{seconds_taken_to { FullImport.call(1) }} seconds)")
-    response.stream.close
+    begin
+      response.stream.write("Kicking off the import...")
+      response.stream.write("import complete. (took #{seconds_taken_to { FullImport.call(1) }} seconds)")
+    ensure
+      response.stream.close
+    end
   end
 
   private
