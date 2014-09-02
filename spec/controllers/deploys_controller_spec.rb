@@ -7,4 +7,20 @@ describe DeploysController do
       expect(response.body).to eq('pong')
     end
   end
+
+  describe "deploy" do
+    before do
+      allow(FullImport).to receive(:call)
+    end
+
+    it 'kicks off an import' do
+      post :deploy
+      expect(FullImport).to have_received(:call).with(limit: 1, stream: response.stream)
+    end
+
+    it 'uses text/event-stream' do
+      post :deploy
+      expect(response.headers['Content-Type']).to eq('text/event-stream')
+    end
+  end
 end
