@@ -9,10 +9,10 @@ class DeploysController < ApplicationController
     render text: 'pong'
   end
 
-  def fetch
+  def deploy
     begin
-      response.stream.write("Kicking off the import...")
-      response.stream.write("import complete. (took #{seconds_taken_to { FullImport.call(1) }} seconds)")
+      response.headers['Content-Type'] = 'text/event-stream'
+      response.stream.write("Import completed in #{seconds_taken_to { FullImport.call(limit: 1, stream: response.stream) }} seconds.")
     ensure
       response.stream.close
     end

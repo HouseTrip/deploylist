@@ -8,10 +8,19 @@ describe DeploysController do
     end
   end
 
-  describe "fetch" do
+  describe "deploy" do
+    before do
+      allow(FullImport).to receive(:call)
+    end
+
     it 'kicks off an import' do
-      expect(FullImport).to receive(:call).with(1)
-      get :fetch
+      post :deploy
+      expect(FullImport).to have_received(:call).with(limit: 1, stream: response.stream)
+    end
+
+    it 'uses text/event-stream' do
+      post :deploy
+      expect(response.headers['Content-Type']).to eq('text/event-stream')
     end
   end
 end
