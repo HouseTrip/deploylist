@@ -1,6 +1,8 @@
 class DeploysController < ApplicationController
   include ActionController::Live
 
+  before_action :authenticate, except: [:ping, :deploy], if: -> { Rails.env.production? }
+
   def index
     @deploys = Deploy.production.map { |d| DeployPresenter.new(d) }
   end
