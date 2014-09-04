@@ -1,6 +1,8 @@
 class DeploysController < ApplicationController
   include ActionController::Live
 
+  protect_from_forgery with: :exception, except: [ :deploy ]
+
   before_action :authenticate, except: [:ping, :deploy], if: -> { Rails.env.production? }
 
   def index
