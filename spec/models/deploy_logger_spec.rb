@@ -6,7 +6,7 @@ describe DeployLogger do
       allow(stream).to receive(:write)
     end
 
-    subject { DeployLogger.new(stream) }
+    subject { described_class.new(stream) }
 
     it 'outputs to the stream' do
       expect(stream).to receive(:write).with("This message\n")
