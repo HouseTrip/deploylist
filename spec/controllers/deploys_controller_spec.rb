@@ -14,12 +14,12 @@ describe DeploysController do
     end
 
     it 'kicks off an import' do
-      post :deploy
+      get :deploy
       expect(FullImport).to have_received(:call).with(limit: 1, stream: response.stream)
     end
 
     it 'uses text/event-stream' do
-      post :deploy
+      get :deploy
       expect(response.headers['Content-Type']).to eq('text/event-stream')
     end
   end

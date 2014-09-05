@@ -1,13 +1,14 @@
 class FullImport
   def self.call(limit: 100, stream: $stdout)
-    log("Fetching deploy information...", stream)
+    @logger = DeployLogger.new(stream)
+    @logger.log("Fetching deploy information...")
 
-    DeployFetcher.new.call
+    DeployFetcher.new(@logger).call
 
     @deploys = Deploy.production.limit(limit)
 
     @deploys.each_with_index do |deploy, index|
-      log("Reviewing deploy: #{deploy.sha}", stream)
+      @logger.log("Reviewing deploy: #{deploy.sha}")
       previous_deploy = @deploys[index+1]
 
       next if deploy == previous_deploy
@@ -17,18 +18,13 @@ class FullImport
       CommitFetcher.new(deploy, previous_deploy).call
     end
 
+    @logger.log("Reviewing stories", newline: false)
     Story.without_title.with_pull_requests.each do |story|
-      log("Reviewing story: ##{story.pivotal_uid}", stream)
+      @logger.log(".", newline: false)
       PullRequestFetcher.new(story).call
     end
 
-    log("Done.", stream)
-  end
-
-  private
-
-  def self.log(text, stream)
-    return unless stream
-    stream.write(text + "\n")
+    @logger.log(".")
+    @logger.log("Done.")
   end
 end
