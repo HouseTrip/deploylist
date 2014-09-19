@@ -13,7 +13,7 @@ sudo: false
 deploy:
   provider: heroku
   api_key:
-    secure: yfXjPX6X6y/yDPy1ElZzRW0dbET659pdQs3PD+jguqDsM/SJ3TxbAjgmRynk084ncBUfCJVKe7+W1Ti/ZrPe3PHTDK5XTXz41CUu4cFwOFp35gtx5X9wM2aQgxB6GVN7rHLi8iSB8UF8QEWpzio2xhfBtv/YJPr/E5uy6/ICa6I=
+    secure: bdoJAFPjjSt4brbUAykBjZ8jc+awVC9VhbGkcHpPXM5SRtrs8cVujIwVnkUVo983ZQ7naBwwxAWv9Xg2sFz/8UwLLXogFjI63aRPDJ2uN2gjhhzOc36bivjW6MEZLOG+JWfjDsiDJ88m8Q50pJ4yWw2DzqhqLYZXBhiKHc6Uouk=
   app: deploylist
   on:
     repo: HouseTrip/deploylist
