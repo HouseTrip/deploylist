@@ -6,7 +6,12 @@ class DeploysController < ApplicationController
   before_action :authenticate, except: [:ping, :deploy], if: -> { Rails.env.production? }
 
   def index
+    @deploys = Deploy.production.limit(50).map { |d| DeployPresenter.new(d) }
+  end
+
+  def all
     @deploys = Deploy.production.map { |d| DeployPresenter.new(d) }
+    render :index
   end
 
   def ping

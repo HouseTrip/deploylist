@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'deploys#index'
+  get '/all' => 'deploys#all', as: :all_deploys
+
   get '/deploy' => 'deploys#deploy'
   get  '/ping' => 'deploys#ping'
+
+  root to: 'deploys#index'
 end
