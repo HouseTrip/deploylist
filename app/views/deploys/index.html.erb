@@ -1,3 +1,12 @@
+<p>
+  Showing <%= @deploys.size %> deploys.
+  <% if action_name == 'all' %>
+    <%= link_to 'View recent', root_path %>
+  <% else %>
+    <%= link_to 'View all', all_deploys_path %>
+  <% end %>
+</p>
+
 <% @deploys.each_with_index do |deploy, index| %>
   <div class='row'>
     <div class='col-xs-12'>
