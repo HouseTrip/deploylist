@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deploy List</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+
+    <div class="container">
+      <header>
+        <h1><%=ENV['ORGANISATION']%> deploys</h1>
+      </header>
+
+      <section>
+        <%= yield %>
+      </section>
+    </div>
+
+  </body>
+</html>

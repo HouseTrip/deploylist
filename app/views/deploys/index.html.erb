@@ -1,0 +1,42 @@
+<p>
+  Showing <%= @deploys.size %> deploys.
+  <% if action_name == 'all' %>
+    <%= link_to 'View recent', root_path %>
+  <% else %>
+    <%= link_to 'View all', all_deploys_path %>
+  <% end %>
+</p>
+
+<% @deploys.each_with_index do |deploy, index| %>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h2>
+        <%= content_tag :a, "", name: deploy.short_ref %>
+        <%= deploy.time.to_s(:long) %>
+        <small>
+          <%= deploy.short_ref %>
+          <%= '(re-deploy)' if deploy.sha == @deploys[index+1].try(:sha) %>
+          by <%= deploy.username %>
+        </small>
+      </h2>
+
+      <% deploy.stories.each do |story| %>
+        <% story = StoryPresenter.new(story) %>
+        <h4>
+          <% if story.pull_request_uid %>
+            <%= pull_request_link(story) %>
+          <% else %>
+            <%= story.title.titleize %>
+          <% end %>
+          <small>
+            <%= pivotal_link(story) %>
+          </small>
+        </h4>
+      <% end %>
+
+      <h5><%= github_diff_link(deploy, @deploys[index+1]) %></h5>
+
+      <hr>
+    </div>
+  </div>
+<% end %>
