@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe DeployFetcher do
-  let(:uri) { "https://api.honeybadger.io/v1/projects/#{ENV['HONEYBADGER_PROJECT_ID']}/deploys?auth_token=#{ENV['HONEYBADGER_TOKEN']}&created_after=1424390400&environment=production&" }
+  let(:uri) { "https://api.honeybadger.io/v1/projects/#{ENV['HONEYBADGER_PROJECT_ID']}/deploys?auth_token=#{ENV['HONEYBADGER_TOKEN']}&created_after=1262649600&environment=production&" }
 
   def stub_page(page)
     stub_request(:get, "#{uri}&page=#{page}")
