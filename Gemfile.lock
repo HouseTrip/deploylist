@@ -109,6 +109,7 @@ GEM
     hashie (3.4.1)
     hike (1.2.3)
     hitimes (1.2.2)
+    honeybadger (2.3.1)
     i18n (0.7.0)
     json (1.8.2)
     jwt (1.4.1)
@@ -293,6 +294,7 @@ DEPENDENCIES
   guard-bundler
   guard-rails
   guard-rspec
+  honeybadger (~> 2.0)
   newrelic_rpm (~> 3.9.3.241)
   octokit (~> 3.0)
   omniauth-google-oauth2
@@ -313,3 +315,6 @@ DEPENDENCIES
   vcr
   web-console (~> 2.0)
   webmock
+
+BUNDLED WITH
+   1.10.6
