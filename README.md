@@ -7,6 +7,9 @@ HouseTrip deploys and changelog service.
 * `brew install postgresql` OR install the app [postgresapp](http://postgresapp.com/)
 * (ensure postgresql server is up and running)
 * Run `./setup.rb`
+* Add a Github personal access token in .env under GITHUB_TOKEN.
+  * Visit https://github.com/settings/tokens/new
+  * Restrict this to just the public_repo scope.
 * `bundle exec foreman start`
 * Visit http://localhost:3000
 
@@ -19,7 +22,7 @@ NOTE: This will get you a version of Deploylist that reports on its own deploys.
   * Under Credentials, create a new ClientID and use: `<protocol>://<server>/users/auth/google_oauth2/callback` as the RedirectURI.
     * `<protocol>` should be https for production, http for localhost
     * `<server>` should be the DNS of your production app, and localhost:3000 for development
-* Adjust the keys in .env to reflect your own use of HoneyBadger, Github and Google OAuth etc.
+* Adjust the keys in .env to reflect your own use of HoneyBadger and Google OAuth etc.
 
 ---
 
