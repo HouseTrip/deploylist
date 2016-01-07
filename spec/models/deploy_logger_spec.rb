@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe DeployLogger do
   describe "log" do
     let(:stream) { double('stream') }
