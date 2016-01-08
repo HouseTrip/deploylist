@@ -131,7 +131,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nenv (0.2.0)
-    newrelic_rpm (3.9.3.241)
+    newrelic_rpm (3.14.1.311)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.6)
@@ -295,7 +295,7 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   honeybadger (~> 2.0)
-  newrelic_rpm (~> 3.9.3.241)
+  newrelic_rpm
   octokit (~> 3.0)
   omniauth-google-oauth2
   pg

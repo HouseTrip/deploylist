@@ -1,3 +1,6 @@
+require 'spec_helper'
+require_relative '../../app/services/title_cleaner'
+
 describe TitleCleaner do
   describe '.call' do
     it 'removes pivotal tags' do

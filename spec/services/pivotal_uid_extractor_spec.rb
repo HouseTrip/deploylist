@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative '../../app/services/uid_extractor'
 
 commits = <<-EOS
   Merge pull request #6544 from HouseTrip/guest-acquisition/quick-fix-home-page-hero-height-incorrect-76870254

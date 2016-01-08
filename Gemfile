@@ -16,7 +16,7 @@ gem 'uglifier', '>= 2.7.2'
 
 gem 'octokit', '~> 3.0'
 
-gem 'newrelic_rpm', '~> 3.9.3.241'
+gem 'newrelic_rpm'
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
