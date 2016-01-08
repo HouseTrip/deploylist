@@ -10,6 +10,7 @@ HouseTrip deploys and changelog service.
 * Add a Github personal access token in .env under GITHUB_TOKEN.
   * Visit https://github.com/settings/tokens/new
   * Restrict this to just the public_repo scope.
+* Optionally: Run `bundle exec rake deploylist:fetch` to seed the DB with deploylist's own deploys.
 * `bundle exec foreman start`
 * Visit http://localhost:3000
 
