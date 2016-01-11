@@ -15,7 +15,11 @@ class FullImport
 
       next unless (deploy && deploy.sha) && (previous_deploy && previous_deploy.sha)
 
-      CommitFetcher.new(deploy, previous_deploy).call
+      begin
+        CommitFetcher.new(deploy, previous_deploy).call
+      rescue Octokit::NotFound => e
+        @logger.log("Error while retrieving history: #{e.message}")
+      end
     end
 
     @logger.log("Reviewing stories", newline: false)

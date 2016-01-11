@@ -245,7 +245,7 @@ Devise.setup do |config|
 
   config.omniauth :google_oauth2,
       ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"],
-      strategy_class: OmniAuth::Strategies::GoogleOauth2
+      strategy_class: OmniAuth::Strategies::GoogleOauth2, skip_jwt: true
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
