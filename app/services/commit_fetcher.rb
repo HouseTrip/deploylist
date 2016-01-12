@@ -17,5 +17,8 @@ class CommitFetcher
 
   def comparrison
     client.compare(repo, previous_deploy.sha, deploy.sha)
+  rescue Octokit::NotFound
+    puts "   (deploy skipped - unable to find one of the commits to compare with)"
+    return OpenStruct.new(commits: [])
   end
 end
