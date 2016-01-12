@@ -24,7 +24,6 @@ gem 'omniauth-google-oauth2'
 gem 'honeybadger', '~> 2.0'
 
 group :test do
-  gem 'rspec-rails'
   gem 'webmock'
   gem 'vcr'
   gem 'factory_girl_rails'
@@ -35,7 +34,6 @@ group :development do
   gem 'quiet_assets'
   gem 'guard-bundler'
   gem 'guard-rails'
-  gem 'guard-rspec'
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
@@ -46,6 +44,8 @@ end
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
 end
 
 group :production do
