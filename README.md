@@ -1,6 +1,12 @@
 # Deploy List
 
-HouseTrip deploys and changelog service.
+HouseTrip deploys and changelog service. This app tracks deploys recorded at
+[HoneyBadger](http://honeybadger.io) and parses commits (and diffs) at GitHub
+to present a meaningful description of what features and stories were released.
+
+Authentication for the app is implemented using Google OAuth. The default
+configuration tracks deploys of the DeployList app itself from it's own
+HoneyBadger account.
 
 ### Getting started
 
@@ -14,7 +20,7 @@ HouseTrip deploys and changelog service.
 * `foreman start`
 * Visit http://localhost:3000
 
-NOTE: This will get you a version of Deploylist that reports on its own deploys.
+NOTE: This will get you a version of DeployList that reports on its own deploys,
 
 ### Working with your own application
 * Setup OmniAuth with Google Apps (if not already done for your organisation):
