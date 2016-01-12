@@ -11,7 +11,7 @@ HouseTrip deploys and changelog service.
   * Visit https://github.com/settings/tokens/new
   * Restrict this to just the public_repo scope.
 * Optionally: Run `bundle exec rake deploylist:fetch` to seed the DB with deploylist's own deploys.
-* `bundle exec foreman start`
+* `foreman start`
 * Visit http://localhost:3000
 
 NOTE: This will get you a version of Deploylist that reports on its own deploys.
