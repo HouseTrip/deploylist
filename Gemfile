@@ -30,7 +30,8 @@ group :test do
 end
 
 group :development do
-  gem 'spring'
+  # Commenting out until https://github.com/rails/spring/issues/456 is resolved
+  # gem 'spring'
   gem 'quiet_assets'
   gem 'guard-bundler'
   gem 'guard-rails'
