@@ -240,7 +240,6 @@ GEM
       faraday (~> 0.8, < 0.10)
     shellany (0.0.1)
     slop (3.6.0)
-    spring (1.6.1)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -307,7 +306,6 @@ DEPENDENCIES
   rb-inotify
   rspec-rails
   sass-rails (~> 4.0)
-  spring
   uglifier (>= 2.7.2)
   unicorn-rails
   vcr

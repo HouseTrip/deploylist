@@ -31,7 +31,7 @@ group :test do
 end
 
 group :development do
-  gem 'spring'
+  # gem 'spring'
   gem 'quiet_assets'
   gem 'guard-bundler'
   gem 'guard-rails'
