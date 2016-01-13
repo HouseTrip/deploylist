@@ -19,7 +19,16 @@
           by <%= deploy.username %>
         </small>
       </h2>
-
+      
+      <% deploy.comments.each do |comment| %>
+        <h4>
+          <%= comment.comment %>
+        </h4>
+        <small>
+          <%= "commented by #{comment.user.name}" %>
+        </small>
+      <% end %>
+        
       <% deploy.stories.each do |story| %>
         <% story = StoryPresenter.new(story) %>
         <h4>
