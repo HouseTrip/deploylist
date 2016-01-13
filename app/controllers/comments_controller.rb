@@ -8,9 +8,10 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
-
+    @comment.user = current_user
+    
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to :root, notice: 'Comment was successfully created.'
     else
       render :new
     end
