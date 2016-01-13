@@ -4,5 +4,6 @@ class Comment < ActiveRecord::Base
   
   validates_presence_of :deploy, :on => :create, :message => "can't be blank"
   validates_presence_of :user, :on => :create, :message => "can't be blank"
+  validates_presence_of :comment, :on => :create, :message => "can't be blank"
   # and has a comment (text)
 end

@@ -34,7 +34,7 @@
         </h4>
       <% end %>
 
-      <h5><%= github_diff_link(deploy, @deploys[index+1]) %></h5>
+      <h5><%= github_diff_link(deploy, @deploys[index+1]) %> | <%= link_to "New comment", new_deploy_comment_path(deploy_id: deploy.id) %></h5>
 
       <hr>
     </div>

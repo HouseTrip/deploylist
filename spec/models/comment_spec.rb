@@ -13,6 +13,10 @@ describe Comment do
     it do 
       expect(Comment.new(deploy: deploy, comment: "some comment").valid?).to be false
     end
+    
+    it do 
+      expect(Comment.new(deploy: deploy, user: user).valid?).to be false
+    end
   end
   
 end

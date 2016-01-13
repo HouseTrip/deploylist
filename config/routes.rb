@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   devise_scope :user do
@@ -10,6 +9,10 @@ Rails.application.routes.draw do
   authenticate do
     get '/all'     => 'deploys#all', as: :all_deploys
     root to: 'deploys#index'
+    resources :deploys do 
+      resources :comments, only: [:new, :create]
+    end
+  
   end
 
   get '/deploy' => 'deploys#deploy'

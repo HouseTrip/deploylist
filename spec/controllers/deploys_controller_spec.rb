@@ -23,4 +23,5 @@ describe DeploysController do
       expect(response.headers['Content-Type']).to eq('text/event-stream')
     end
   end
+  
 end
