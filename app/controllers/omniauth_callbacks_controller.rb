@@ -10,6 +10,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def domain_user?
-    request.env['omniauth.auth']['extra']['raw_info']['hd'] =~ Regexp.new(ENV['GOOGLE_DOMAIN'])
+    request.env['omniauth.auth']['extra']['raw_info']['email'] =~ Regexp.new(ENV['GOOGLE_DOMAIN'])
   end
 end
