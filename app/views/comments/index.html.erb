@@ -1,0 +1,6 @@
+<h1><%= @deploy.short_ref %> comments</h1>
+
+<% @deploy.comments.each do |comment| %>
+  <span><%= comment.user&.name %></span>
+  <p><%= comment.body %></p>
+<% end %>
