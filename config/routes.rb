@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   end
 
   get '/deploy' => 'deploys#deploy'
+  get '/deploy/:deploy_sha/comments' => 'comments#index', as: :deploy_comments
+  get '/deploy/:deploy_sha/new' => 'comments#new', as: :new_deploy_comment
+  post '/comments' => 'comments#create', as: :comments
   get '/ping'   => 'deploys#ping'
   get '/denied' => 'deploys#denied', as: :access_denied
 end
