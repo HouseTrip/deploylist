@@ -1,0 +1,27 @@
+<p>
+  Showing <%= @comments.size %> comments.
+</p>
+
+<h5>
+  <%= link_to "Show deploys", root_path %>
+  |
+  <%= link_to 'Add Comment', new_deploy_comment_path(deploy_sha: @deploy.sha) %>
+</h5>
+
+
+<% @comments.each_with_index do |comment, index| %>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h2>
+        <%= index + 1 %>.
+        <%= comment.user.name %>
+      </h2>
+
+      <h4>
+        <%= comment.text %>
+      </h4>
+
+      <hr>
+    </div>
+  </div>
+<% end %>

@@ -34,7 +34,15 @@
         </h4>
       <% end %>
 
-      <h5><%= github_diff_link(deploy, @deploys[index+1]) %></h5>
+      <h5>
+        <%= github_diff_link(deploy, @deploys[index+1]) %>
+        <%- if deploy.comments.count > 0 %>
+          |
+          <%= link_to "Show Comments (#{deploy.comments.count})", deploy_comments_path(deploy_sha: deploy.sha) %>
+        <% end %>
+        |
+        <%= link_to 'Add Comment', new_deploy_comment_path(deploy_sha: deploy.sha) %>
+      </h5>
 
       <hr>
     </div>

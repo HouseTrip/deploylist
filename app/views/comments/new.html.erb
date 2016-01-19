@@ -1,0 +1,10 @@
+<h1>
+  Create a new comment for deploy: <%= @comment.deploy.sha %>
+</h1>
+
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :deploy_id %>
+  Text
+  <%= f.text_area :text %>
+  <%= f.submit 'Create' %>
+<% end %>
