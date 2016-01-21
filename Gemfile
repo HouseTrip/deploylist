@@ -18,7 +18,7 @@ gem 'octokit', '~> 3.0'
 
 gem 'newrelic_rpm'
 
-gem 'devise'
+gem 'devise', '>= 3.5.4'
 gem 'omniauth-google-oauth2'
 
 gem 'honeybadger', '~> 2.0'
@@ -55,3 +55,5 @@ group :production do
   gem 'unicorn-rails'
   gem 'rails_12factor'
 end
+
+gem 'nokogiri', '>= 1.6.7.2'
