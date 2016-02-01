@@ -272,7 +272,7 @@ GEM
       rack
       unicorn
     vcr (3.0.1)
-    warden (1.2.5)
+    warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
