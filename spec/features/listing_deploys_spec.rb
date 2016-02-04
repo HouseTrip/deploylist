@@ -17,4 +17,22 @@ RSpec.feature "Listing deploys" do
 
     expect(page).to have_text("Showing 50 deploys")
   end
+
+  describe 'searching by date' do
+    let(:lower_bound_date) { Time.zone.parse("2016-01-01") }
+    let(:upper_bound_date) { Time.zone.parse("2016-01-15") }
+
+    before do
+      create(:deploy, time: lower_bound_date)
+      create(:deploy, time: upper_bound_date)
+      create(:deploy, time: lower_bound_date + 1.day)
+      create(:deploy, time: lower_bound_date - 1.day)
+      create(:deploy, time: upper_bound_date + 1.day)
+    end
+
+    scenario 'user sees only those deploys within given dates' do
+      visit "/?lower_bound_date=#{lower_bound_date.strftime("%Y-%m-%d")}&upper_bound_date=#{upper_bound_date.strftime("%Y-%m-%d")}"
+      expect(page).to have_text("Showing 3 deploys")
+    end
+  end
 end
