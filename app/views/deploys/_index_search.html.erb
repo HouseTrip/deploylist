@@ -1,0 +1,6 @@
+<%= form_tag root_path, method: :get do %>
+  <%= text_field_tag :lower_bound_date, deploy_search.lower_bound_date %>
+  <%= text_field_tag :upper_bound_date, deploy_search.upper_bound_date %>
+
+  <%= submit_tag "Search" %>
+<% end %>
