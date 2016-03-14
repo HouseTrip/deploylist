@@ -112,7 +112,7 @@ GEM
     hashdiff (0.3.0)
     hashie (3.4.3)
     hike (1.2.3)
-    honeybadger (2.5.2)
+    honeybadger (2.5.3)
     i18n (0.7.0)
     json (1.8.3)
     jwt (1.5.1)
@@ -204,7 +204,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.16.0)
-    rake (11.0.1)
+    rake (11.1.0)
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.9.7)
