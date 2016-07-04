@@ -56,4 +56,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'nokogiri', '>= 1.6.7.2'
+gem 'nokogiri', '>= 1.6.8'
