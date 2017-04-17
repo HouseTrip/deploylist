@@ -35,6 +35,7 @@
       <% end %>
 
       <h5><%= github_diff_link(deploy, @deploys[index+1]) %></h5>
+      <h5><%= link_to 'View all comments', deploy_comments_path(deploy) %></h5>
 
       <hr>
     </div>

@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   authenticate do
     get '/all'     => 'deploys#all', as: :all_deploys
     root to: 'deploys#index'
+    
+    resources :deploys do
+      resources :comments, only: [:index, :new, :create]
+    end
   end
 
   get '/deploy' => 'deploys#deploy'
